@@ -16,7 +16,7 @@ Actions:
 		 LEFT (3)
 
 Rewards: 
-		 0 for going in Terminal state
+		 0 once the agent reaches Terminal state
     -1 for all other actions in any state
 
 Note: State remains the same on going out of the maze (but -1 reward is given)
@@ -39,5 +39,5 @@ def env(state, action, rows, columns):
     elif(action==3):
       next_state = state-1 if state%columns else state 
       
-  return_val = [1, next_state, reward(next_state), isdone(next_state)]
+  return_val = [1, next_state, reward(state), isdone(next_state)]
   return return_val
